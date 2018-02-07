@@ -1,0 +1,12 @@
+/**
+ * 21 Jan 2018: MF: New function to override WooCommerce cart expiry to 12 hours
+ */
+function im380_filter_wc_session_expiring($seconds) {
+    return 60 * 60 * 11; // 11 hours
+}
+add_filter('wc_session_expiring', 'im380_filter_wc_session_expiring' );
+
+function im380_filter_wc_session_expiration($seconds) {
+    return 60 * 60 * 12; // 12 hours
+}
+add_filter('wc_session_expiration', 'im380_filter_wc_session_expiration' );
